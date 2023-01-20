@@ -1,0 +1,201 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "MitraMart API Collection",
+      "description": ""
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      [
+        {
+          "name": "Market Controller",
+          "description": "Market Controller"
+        }
+      ]
+    ],
+    "schemes": [
+        "http",
+      "https"
+    ],
+    "securityDefinitions": {},
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/goods/all": {
+        "get": {
+          "tags": [
+            "goods Controller"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "search",
+              "in": "query",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/goods/detail/{id}": {
+        "get": {
+          "tags": [
+            "goods Controller"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/goods/input": {
+        "post": {
+          "tags": [
+            "goods Controller"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "example": "string"
+                  },
+                  "kodeBar": {
+                    "example": "string"
+                  },
+                  "stok": {
+                    "example": 1
+                  },
+                  "harga": {
+                    "example": "string"
+                  },
+                  "berat": {
+                    "example": "string"
+                  },
+                  "exp": {
+                    "example": "2023-01-01"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/goods/update/{id}": {
+        "put": {
+          "tags": [
+            "goods Controller"
+          ],
+          "description": "",
+          "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              },
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "example": "string"
+                  },
+                  "kodeBar": {
+                    "example": "string"
+                  },
+                  "stok": {
+                    "example": 1
+                  },
+                  "harga": {
+                    "example": "string"
+                  },
+                  "berat": {
+                    "example": "string"
+                  },
+                  "tanggalMasuk": {
+                    "example": "2023-01-01"
+                  },
+                  "exp": {
+                    "example": "2023-01-01"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Error"
+            }
+          }
+        }
+      },
+      "/goods/delete/{id}": {
+        "delete": {
+          "tags": [
+            "goods Controller"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Error"
+            }
+          }
+        }
+      }
+    }
+  }
